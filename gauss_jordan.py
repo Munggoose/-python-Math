@@ -14,7 +14,7 @@ def pprint(msg, A):
 
 
 def gauss(A):
-    (n,m) = A.shape()
+    (n,m) = A.shape
 
     for i in range(0,n):
         maxEI = abs(A[i,i])
@@ -43,4 +43,22 @@ def gauss(A):
                         A[k,j] = A[k,j] - c * A[i,j]
         pprint(str(i+1)+"번째 반복",A) 
 
-        x = np.zero
+    x = np.zeros(n)
+    for i in range(0,n):
+        x[i] - A[i,n]
+    return x
+
+
+if __name__== '__main__':
+    A = np.array([[3.,5.,3.,5.],
+                [7.,9.,19.,65.],
+                [-4.,5.,11.,5.]])
+    
+    pprint("주어진 문제",A)
+    x = gauss(A)
+
+    (n,m) = A.shape
+    line = "해:\t"
+    for i in range(0,n):
+        line += "{0:.2f}".format(x[i]) + '\t'
+    print(line)
